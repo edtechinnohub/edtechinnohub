@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/edtechinnohub   # <-- update after you push to GitHub
+  repo: https://github.com/edtechinnohub/edtechinnohub   # <-- update after you push to GitHub
   branch: main
 
 # When this site is deployed on Netlify, Netlify handles GitHub login for you
