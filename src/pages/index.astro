@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookCard from '../components/BookCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const books = (await getCollection('books'))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const services = [
+  {
+    title: 'Digital Skills Training',
+    body: 'Microsoft Office, data analysis, and digital marketing — practical skills for the modern workplace.',
+  },
+  {
+    title: 'Coding for Kids',
+    body: 'Fun, interactive coding classes for children aged 6–16 that spark a lasting interest in technology.',
+  },
+  {
+    title: 'Teacher Development',
+    body: 'Modern methodologies, technology integration, and classroom management strategies for educators.',
+  },
+  {
+    title: 'Empowerment for the Underrepresented',
+    body: 'Focused training for girls, women, and children in under-represented communities.',
+  },
+  {
+    title: 'Monthly Webinars',
+    body: 'Sessions on career development, mental health, and personal finance — open to everyone.',
+  },
+  {
+    title: 'Guidance & Support',
+    body: 'Personalized mentorship and support for learners navigating their next step.',
+  },
+];
+---
+
+<BaseLayout title="Empowering Nigerians through Education and Innovation">
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="grid md:grid-cols-[1.3fr_1fr] gap-12 items-end">
+      <div>
+        <p class="text-sm font-medium text-leaf mb-4">Lagos, Nigeria · Est. for UN SDG 4</p>
+        <h1 class="text-4xl md:text-6xl font-semibold leading-[1.08] tracking-tight max-w-2xl">
+          Empowering Nigerians through education and innovation.
+        </h1>
+        <p class="text-lg text-slate mt-6 max-w-lg leading-relaxed">
+          We bridge the education gap with inclusive, equitable, and quality learning opportunities — from
+          coding classes for kids to digital skills training for adults entering the workforce.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="/about#get-involved" class="inline-flex items-center bg-ink text-white px-5 py-3 rounded-md no-underline font-medium hover:bg-leaf transition-colors">
+            Get involved
+          </a>
+          <a href="/books" class="inline-flex items-center border border-line text-ink px-5 py-3 rounded-md no-underline font-medium hover:border-ink transition-colors">
+            Browse our books
+          </a>
+        </div>
+      </div>
+
+      <div class="border-l-2 border-gold pl-6 pb-1">
+        <p class="font-display text-2xl leading-snug">
+          "Bridging the education gap with inclusive, equitable, and quality learning opportunities."
+        </p>
+        <p class="text-sm text-slate mt-3">Aligned with UN Sustainable Development Goal 4</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-mist py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <h2 class="text-3xl font-semibold">Our services</h2>
+        <a href="/about" class="text-sm font-medium text-leaf no-underline hover:underline">Learn more about our programs →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((s) => (
+          <div class="bg-paper rounded-lg p-6 border border-line">
+            <h3 class="font-semibold text-lg">{s.title}</h3>
+            <p class="text-sm text-slate mt-2 leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest books -->
+  {books.length > 0 && (
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <div>
+          <h2 class="text-3xl font-semibold">Latest books</h2>
+          <p class="text-slate mt-2">Free to download, always.</p>
+        </div>
+        <a href="/books" class="text-sm font-medium text-leaf no-underline hover:underline">View all books →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        {books.map((book) => <BookCard {...book.data} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- Latest blog posts -->
+  {posts.length > 0 && (
+    <section class="max-w-6xl mx-auto px-6 py-20 border-t border-line">
+      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <h2 class="text-3xl font-semibold">From the blog</h2>
+        <a href="/blog" class="text-sm font-medium text-leaf no-underline hover:underline">Read all posts →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {posts.map((post) => <BlogCard slug={post.slug} {...post.data} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="bg-ink text-white py-20" id="get-involved">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-semibold">Join the movement.</h2>
+        <p class="text-white/70 mt-3 max-w-md leading-relaxed">
+          Whether you want to teach, learn, or support our work — there's a place for you at EdTech InnoHub.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 md:justify-end">
+        <a href="https://forms.gle/NYwMrJQuGzLjgYUXA" class="inline-flex items-center bg-gold text-ink px-5 py-3 rounded-md no-underline font-medium hover:brightness-95 transition">
+          Join as a Team
+        </a>
+        <a href="https://forms.gle/KQE4NgUJhaNP7ojc7" class="inline-flex items-center border border-white/30 text-white px-5 py-3 rounded-md no-underline font-medium hover:bg-white/10 transition">
+          Join as a Learner
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

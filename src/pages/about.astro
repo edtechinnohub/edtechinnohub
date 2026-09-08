@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const programs = [
+  { title: 'Digital Skills Training', body: 'Learn essential digital skills for the modern workplace, including Microsoft Office, data analysis, and digital marketing.' },
+  { title: 'Coding for Kids', body: 'Fun and interactive coding classes for children aged 6–16 to spark their interest in technology.' },
+  { title: 'Teacher Development Program', body: 'Enhance teaching strategies with modern methodologies, technology integration, and classroom management techniques.' },
+  { title: 'Empowerment for the Underrepresented', body: 'Training the underrepresented — especially girls, women, and children — in under-represented communities.' },
+  { title: 'Monthly Webinars', body: 'Covering topics like career development, mental health, and personal finance.' },
+  { title: 'Guidance & Support', body: 'Personalized guidance and support for learners at every stage.' },
+];
+---
+
+<BaseLayout title="About" description="Our purpose, our programs, and how to get involved with EdTech InnoHub.">
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-12">
+    <p class="text-sm font-medium text-leaf mb-4">Our purpose</p>
+    <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">
+      Bridging the education gap with inclusive, equitable, and quality learning.
+    </h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      EdTech InnoHub works toward UN Sustainable Development Goal 4 — quality education for all — by
+      putting practical, modern skills within reach of learners and educators across Nigeria, with a
+      particular focus on girls, women, and under-represented communities.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-line">
+    <h2 class="text-2xl font-semibold mb-8">Our programs</h2>
+    <div class="space-y-6">
+      {programs.map((p, i) => (
+        <div class="flex gap-5">
+          <span class="font-display text-2xl text-line w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 class="font-semibold text-lg">{p.title}</h3>
+            <p class="text-slate mt-1 leading-relaxed">{p.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="get-involved" class="bg-mist py-16 mt-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-3">Get involved</h2>
+      <p class="text-slate max-w-lg leading-relaxed mb-8">
+        We're always looking for volunteers, facilitators, and learners. Pick the path that fits you.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <a href="https://forms.gle/NYwMrJQuGzLjgYUXA" class="block bg-paper border border-line rounded-lg p-6 no-underline hover:border-leaf transition-colors">
+          <h3 class="font-semibold text-ink text-lg">Join as a Team member</h3>
+          <p class="text-sm text-slate mt-2">Volunteer as a facilitator, mentor, or organizer.</p>
+          <span class="text-sm font-medium text-leaf mt-3 inline-block">Apply →</span>
+        </a>
+        <a href="https://forms.gle/KQE4NgUJhaNP7ojc7" class="block bg-paper border border-line rounded-lg p-6 no-underline hover:border-leaf transition-colors">
+          <h3 class="font-semibold text-ink text-lg">Join as a Learner</h3>
+          <p class="text-sm text-slate mt-2">Sign up for training, webinars, and coding classes.</p>
+          <span class="text-sm font-medium text-leaf mt-3 inline-block">Sign up →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  fileUrl: string;
+}
+const { title, category, description, fileUrl } = Astro.props;
+---
+
+<article class="border border-line rounded-lg p-5 bg-paper hover:border-leaf transition-colors">
+  <p class="text-xs font-medium text-leaf">{category}</p>
+  <h3 class="text-lg font-semibold leading-snug mt-1">{title}</h3>
+  <p class="text-sm text-slate mt-2 line-clamp-2">{description}</p>
+  <a
+    href={fileUrl}
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-1.5 text-sm font-medium text-ink no-underline mt-3 hover:underline"
+  >
+    Open resource
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M7 17 17 7M7 7h10v10"></path>
+    </svg>
+  </a>
+</article>

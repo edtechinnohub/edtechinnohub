@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/edtechinnohub   # <-- update after you push to GitHub
+  branch: main
+
+# When this site is deployed on Netlify, Netlify handles GitHub login for you
+# automatically — no extra OAuth app setup needed. If you deploy elsewhere,
+# see the Decap CMS docs for setting up a GitHub OAuth app instead.
+
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Author", name: "author", widget: "string", default: "EdTech InnoHub Team" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "Publish date", name: "publishDate", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "books"
+    label: "Books"
+    folder: "src/content/books"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "File URL (Drive share link or upload)", name: "fileUrl", widget: "string" }
+      - { label: "Publish date", name: "publishDate", widget: "datetime" }
+      - { label: "Body / notes (optional)", name: "body", widget: "markdown", required: false }
+      - { label: "Synced from Drive", name: "driveSynced", widget: "boolean", default: false, required: false }
+      - { label: "Drive file ID", name: "driveFileId", widget: "string", required: false }
+
+  - name: "resources"
+    label: "Resources"
+    folder: "src/content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Digital Skills", "Coding for Kids", "Teacher Development", "Webinar Recording", "Guide", "Other"]
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "File URL (Drive share link or upload)", name: "fileUrl", widget: "string" }
+      - { label: "Publish date", name: "publishDate", widget: "datetime" }
+      - { label: "Body / notes (optional)", name: "body", widget: "markdown", required: false }
+      - { label: "Synced from Drive", name: "driveSynced", widget: "boolean", default: false, required: false }
+      - { label: "Drive file ID", name: "driveFileId", widget: "string", required: false }

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookCard from '../components/BookCard.astro';
+import { getCollection } from 'astro:content';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout title="Books" description="Free books from EdTech InnoHub — downloadable and always growing.">
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+    <p class="text-sm font-medium text-leaf mb-4">Free library</p>
+    <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">Books</h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      Every book here is free to download. New titles are added directly from our Drive library — no
+      request needed.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    {books.length > 0 ? (
+      <div class="grid md:grid-cols-2 gap-5">
+        {books.map((book) => <BookCard {...book.data} />)}
+      </div>
+    ) : (
+      <div class="text-center py-16 border border-dashed border-line rounded-lg">
+        <p class="text-slate">No books published yet — the first titles are on their way.</p>
+      </div>
+    )}
+  </section>
+</BaseLayout>

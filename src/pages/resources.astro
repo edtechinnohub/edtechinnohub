@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import { getCollection } from 'astro:content';
+
+const resources = (await getCollection('resources')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout title="Resources" description="Guides, worksheets, and webinar recordings from EdTech InnoHub.">
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+    <p class="text-sm font-medium text-leaf mb-4">Free resources</p>
+    <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">Resources</h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      Guides, worksheets, and webinar recordings to support your learning — synced straight from our
+      resource library.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    {resources.length > 0 ? (
+      <div class="grid md:grid-cols-3 gap-5">
+        {resources.map((r) => <ResourceCard {...r.data} />)}
+      </div>
+    ) : (
+      <div class="text-center py-16 border border-dashed border-line rounded-lg">
+        <p class="text-slate">No resources published yet — check back soon.</p>
+      </div>
+    )}
+  </section>
+</BaseLayout>
