@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+
+const pillars = [
+  {
+    title: 'Education',
+    body: 'Curriculum-aligned learning materials, illustrated and story-based children\'s books, STEM resources and digital learning content. The goal isn\'t to reproduce a textbook — it\'s to bring learning to life.',
+    example: 'Example: our Basic Science learning book for Primary 1, built around Nigeria\'s revised curriculum.',
+  },
+  {
+    title: 'Digital Skills & Training',
+    body: 'Practical training for young people (computer literacy, data analysis, AI tools, digital productivity, entrepreneurship) and for educators (digital teaching tools, virtual classrooms, AI for lesson prep).',
+    example: 'Don\'t just learn a digital tool — learn how to use it to solve a real problem.',
+  },
+  {
+    title: 'Research & Innovation',
+    body: 'We use research and technology to understand educational and social problems, and develop solutions relevant to the Nigerian and African context — with a particular interest in low-resource environments.',
+    example: 'See our current work on the Impact & Research page.',
+  },
+  {
+    title: 'Social Impact',
+    body: 'A commercially-driven, impact-focused model: products and services that generate revenue while extending access to underserved communities, rural areas, women and girls, and young people.',
+    example: 'Impact shouldn\'t depend entirely on grants or donations to be sustainable.',
+  },
+];
+
+const audiences = [
+  { title: 'Children', body: 'Learning through engaging, practical and accessible educational resources — designed so concepts are recognisable in the world around them, not just memorised.' },
+  { title: 'Young People', body: 'Developing digital and practical skills for education, employment, entrepreneurship and problem-solving — including a focus on women and girls building economic independence.' },
+  { title: 'Adults & Educators', body: 'Helping teachers and professionals use technology and continuous learning to become more effective, confident and productive.' },
+];
+
+const training = [
+  { category: 'Digital Skills', body: 'Computer literacy, digital productivity, digital research.', status: 'In development' },
+  { category: 'Data', body: 'Practical data analysis for real decision-making.', status: 'Coming soon' },
+  { category: 'AI', body: 'AI tools for problem-solving, work and the classroom.', status: 'Coming soon' },
+  { category: 'Educator Development', body: 'Digital teaching tools, online teaching, AI for lesson preparation.', status: 'In development' },
+  { category: 'Entrepreneurship', body: 'Turning digital skills into income and opportunity.', status: 'Coming soon' },
+  { category: 'Professional Development', body: 'Digital productivity and workplace technology.', status: 'Coming soon' },
+];
+---
+
+<BaseLayout title="Programs" description="What EdTech InnoHub does, who we serve, and our training and courses.">
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-6">
+    <p class="text-sm font-semibold text-green mb-4">Our work</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight max-w-2xl">Programs</h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      We build practical learning solutions for real people and real problems — organised across four
+      areas, for three audiences.
+    </p>
+  </section>
+
+  <!-- What we do -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-line">
+    <h2 class="text-2xl font-bold mb-8">What we do</h2>
+    <div class="grid sm:grid-cols-2 gap-5">
+      {pillars.map((p) => (
+        <div class="border border-line rounded-lg p-6">
+          <h3 class="font-bold text-lg">{p.title}</h3>
+          <p class="text-slate text-sm mt-2 leading-relaxed">{p.body}</p>
+          <p class="text-xs text-green font-medium mt-3">{p.example}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Who we serve -->
+  <section class="bg-mint py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-8">Who we serve</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {audiences.map((a) => (
+          <div class="bg-paper rounded-lg border border-line overflow-hidden">
+            <PhotoSlot label={`Add a photo: ${a.title.toLowerCase()} at an EdTech InnoHub session`} aspect="aspect-[4/3]" class="rounded-none border-0 border-b border-line" />
+            <div class="p-6">
+              <h3 class="font-bold text-lg">{a.title}</h3>
+              <p class="text-slate text-sm mt-2 leading-relaxed">{a.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-slate mt-8 max-w-2xl leading-relaxed">
+        Women and girls are an important part of our social-impact work — helping them develop digital
+        skills, build economic independence and access opportunity — as one focus within our broader
+        education and technology mission, not the whole of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Training & courses -->
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-2">Training & Courses</h2>
+    <p class="text-slate mb-8 max-w-2xl leading-relaxed">
+      We're actively building out our course library. Here's what's in progress:
+    </p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {training.map((t) => (
+        <div class="border border-line rounded-lg p-5">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-bold">{t.category}</h3>
+            <span class="text-xs font-medium text-green bg-mint px-2 py-1 rounded-full whitespace-nowrap">{t.status}</span>
+          </div>
+          <p class="text-sm text-slate mt-2 leading-relaxed">{t.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -2,22 +2,24 @@
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/events', label: 'Events' },
+  { href: '/programs', label: 'Programs' },
+  { href: '/impact', label: 'Impact & Research' },
   { href: '/books', label: 'Books' },
-  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
 ];
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="border-b border-line bg-paper">
+<header class="border-b border-line bg-paper sticky top-0 z-20">
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
-    <a href="/" class="font-display text-xl font-semibold text-ink flex items-center gap-2">
-      <span class="inline-block w-3 h-3 rounded-full bg-gold"></span>
+    <a href="/" class="font-display text-xl font-extrabold text-ink flex items-center gap-2 no-underline">
+      <span class="inline-flex w-8 h-8 rounded-md bg-forest items-center justify-center">
+        <span class="w-2.5 h-2.5 rounded-full bg-green-light"></span>
+      </span>
       EdTech InnoHub
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 font-body text-[15px]">
+    <nav class="hidden lg:flex items-center gap-7 font-body text-[15px]">
       {navItems.map((item) => {
         const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
         return (
@@ -35,13 +37,13 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <a
-      href="/about#get-involved"
-      class="hidden md:inline-flex items-center bg-ink text-white text-sm font-medium px-4 py-2 rounded-md no-underline hover:bg-leaf transition-colors"
+      href="/partner"
+      class="hidden lg:inline-flex items-center bg-green text-white text-sm font-semibold px-4 py-2.5 rounded-md no-underline hover:bg-forest transition-colors"
     >
-      Get involved
+      Partner with us
     </a>
 
-    <details class="md:hidden relative">
+    <details class="lg:hidden relative">
       <summary class="list-none cursor-pointer p-2 -mr-2" aria-label="Open menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -49,12 +51,16 @@ const currentPath = Astro.url.pathname;
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </summary>
-      <div class="absolute right-0 top-12 w-56 bg-paper border border-line rounded-lg shadow-lg py-2 z-10">
+      <div class="absolute right-0 top-12 w-60 bg-paper border border-line rounded-lg shadow-lg py-2 z-10">
         {navItems.map((item) => (
-          <a href={item.href} class="block px-4 py-2.5 text-ink no-underline hover:bg-mist">
+          <a href={item.href} class="block px-4 py-2.5 text-ink no-underline hover:bg-mint">
             {item.label}
           </a>
         ))}
+        <a href="/resources" class="block px-4 py-2.5 text-ink no-underline hover:bg-mint">Resources</a>
+        <a href="/gallery" class="block px-4 py-2.5 text-ink no-underline hover:bg-mint">Gallery</a>
+        <a href="/contact" class="block px-4 py-2.5 text-ink no-underline hover:bg-mint">Contact</a>
+        <a href="/partner" class="block px-4 py-2.5 mt-1 mx-2 text-center bg-green text-white rounded-md no-underline font-medium">Partner with us</a>
       </div>
     </details>
   </div>

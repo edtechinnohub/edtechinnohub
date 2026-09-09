@@ -1,117 +1,172 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
 import BookCard from '../components/BookCard.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
 const books = (await getCollection('books'))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 2);
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 3);
 
-const services = [
+const pillars = [
   {
-    title: 'Digital Skills Training',
-    body: 'Microsoft Office, data analysis, and digital marketing — practical skills for the modern workplace.',
+    title: 'Education',
+    body: 'Curriculum-aligned books and learning resources that make difficult concepts practical, engaging and easy to use — not just easier to memorise.',
+    href: '/books',
   },
   {
-    title: 'Coding for Kids',
-    body: 'Fun, interactive coding classes for children aged 6–16 that spark a lasting interest in technology.',
+    title: 'Digital Skills',
+    body: 'Practical training in computer literacy, data, AI tools and digital productivity for young people, educators and professionals.',
+    href: '/programs',
   },
   {
-    title: 'Teacher Development',
-    body: 'Modern methodologies, technology integration, and classroom management strategies for educators.',
+    title: 'Research & Innovation',
+    body: 'Understanding real educational and social problems in the Nigerian context, and building solutions designed for low-resource environments.',
+    href: '/impact',
   },
   {
-    title: 'Empowerment for the Underrepresented',
-    body: 'Focused training for girls, women, and children in under-represented communities.',
+    title: 'Social Impact',
+    body: 'Extending access to underserved communities, women and girls, and young people who are often left out of the digital economy.',
+    href: '/impact',
   },
-  {
-    title: 'Monthly Webinars',
-    body: 'Sessions on career development, mental health, and personal finance — open to everyone.',
-  },
-  {
-    title: 'Guidance & Support',
-    body: 'Personalized mentorship and support for learners navigating their next step.',
-  },
+];
+
+const approach = [
+  { step: 'Learn', body: 'Understand a concept or skill clearly and practically.' },
+  { step: 'Practise', body: 'Apply it in real, hands-on exercises — not just theory.' },
+  { step: 'Create', body: 'Build something real: a solution, a project, a piece of work.' },
+  { step: 'Earn', body: 'Turn that skill into income, employment or opportunity.' },
+  { step: 'Impact', body: 'Use it to improve life for yourself and your community.' },
 ];
 ---
 
-<BaseLayout title="Empowering Nigerians through Education and Innovation">
+<BaseLayout title="Making Education Practical. Making Technology Accessible.">
   <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-    <div class="grid md:grid-cols-[1.3fr_1fr] gap-12 items-end">
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-16 md:pt-20 md:pb-20">
+    <div class="grid md:grid-cols-[1.1fr_1fr] gap-12 items-center">
       <div>
-        <p class="text-sm font-medium text-leaf mb-4">Lagos, Nigeria · Est. for UN SDG 4</p>
-        <h1 class="text-4xl md:text-6xl font-semibold leading-[1.08] tracking-tight max-w-2xl">
-          Empowering Nigerians through education and innovation.
+        <p class="text-sm font-semibold text-green mb-4">Education & Technology Social Enterprise · Nigeria</p>
+        <h1 class="text-4xl md:text-[3.4rem] font-extrabold leading-[1.06] tracking-tight max-w-xl">
+          Making education practical. Making technology accessible.
         </h1>
         <p class="text-lg text-slate mt-6 max-w-lg leading-relaxed">
-          We bridge the education gap with inclusive, equitable, and quality learning opportunities — from
-          coding classes for kids to digital skills training for adults entering the workforce.
+          We use education, technology and innovation to help children, young people and educators learn,
+          create and thrive — especially where access and opportunity are limited.
         </p>
         <div class="flex flex-wrap gap-3 mt-8">
-          <a href="/about#get-involved" class="inline-flex items-center bg-ink text-white px-5 py-3 rounded-md no-underline font-medium hover:bg-leaf transition-colors">
-            Get involved
+          <a href="/programs" class="inline-flex items-center bg-forest text-white px-5 py-3 rounded-md no-underline font-semibold hover:bg-green transition-colors">
+            Explore Our Work
           </a>
-          <a href="/books" class="inline-flex items-center border border-line text-ink px-5 py-3 rounded-md no-underline font-medium hover:border-ink transition-colors">
-            Browse our books
+          <a href="/partner" class="inline-flex items-center border border-line text-ink px-5 py-3 rounded-md no-underline font-semibold hover:border-green hover:text-green transition-colors">
+            Partner With Us
           </a>
         </div>
       </div>
 
-      <div class="border-l-2 border-gold pl-6 pb-1">
-        <p class="font-display text-2xl leading-snug">
-          "Bridging the education gap with inclusive, equitable, and quality learning opportunities."
-        </p>
-        <p class="text-sm text-slate mt-3">Aligned with UN Sustainable Development Goal 4</p>
-      </div>
+      <PhotoSlot
+        label="Add a real photo: children or young people learning at an EdTech InnoHub session"
+        aspect="aspect-[4/5]"
+      />
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="bg-mist py-20">
+  <!-- What we do -->
+  <section class="bg-mint py-20">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
-        <h2 class="text-3xl font-semibold">Our services</h2>
-        <a href="/about" class="text-sm font-medium text-leaf no-underline hover:underline">Learn more about our programs →</a>
+      <div class="max-w-xl mb-10">
+        <p class="text-sm font-semibold text-green mb-3">What we do</p>
+        <h2 class="text-3xl font-bold">Four ways we bridge the gap between knowing and doing.</h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((s) => (
-          <div class="bg-paper rounded-lg p-6 border border-line">
-            <h3 class="font-semibold text-lg">{s.title}</h3>
-            <p class="text-sm text-slate mt-2 leading-relaxed">{s.body}</p>
-          </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {pillars.map((p) => (
+          <a href={p.href} class="block bg-paper rounded-lg p-6 border border-line no-underline hover:border-green transition-colors">
+            <h3 class="font-bold text-lg text-ink">{p.title}</h3>
+            <p class="text-sm text-slate mt-2 leading-relaxed">{p.body}</p>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Latest books -->
+  <!-- Our approach -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-xl mb-12">
+      <p class="text-sm font-semibold text-green mb-3">Our approach</p>
+      <h2 class="text-3xl font-bold">We don't want education to stop at knowledge.</h2>
+      <p class="text-slate mt-4 leading-relaxed">
+        A young person shouldn't just learn data analysis — they should use it to solve a real problem.
+        A teacher shouldn't just attend an AI workshop — they should use AI to plan a better lesson.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-5 gap-4">
+      {approach.map((a, i) => (
+        <div class="border-t-2 border-green pt-4">
+          <p class="text-xs text-slate mb-1">{String(i + 1).padStart(2, '0')}</p>
+          <h3 class="font-bold text-lg">{a.step}</h3>
+          <p class="text-sm text-slate mt-1.5 leading-relaxed">{a.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Who we serve -->
+  <section class="bg-forest text-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-sm font-semibold text-green-light mb-3">Who we serve</p>
+      <h2 class="text-3xl font-bold max-w-xl">Practical support at every stage of learning.</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div>
+          <h3 class="font-bold text-lg">Children</h3>
+          <p class="text-white/70 text-sm mt-2 leading-relaxed">
+            Engaging, practical and accessible learning resources — including curriculum-aligned books.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg">Young People</h3>
+          <p class="text-white/70 text-sm mt-2 leading-relaxed">
+            Digital and practical skills for education, employment, entrepreneurship and problem-solving.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg">Educators & Adults</h3>
+          <p class="text-white/70 text-sm mt-2 leading-relaxed">
+            Confidence with technology and continuous learning to become more effective and productive.
+          </p>
+        </div>
+      </div>
+      <a href="/programs" class="inline-flex items-center text-sm font-semibold text-white no-underline mt-8 hover:underline">
+        See how we work with each group →
+      </a>
+    </div>
+  </section>
+
+  <!-- Books -->
   {books.length > 0 && (
     <section class="max-w-6xl mx-auto px-6 py-20">
       <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
         <div>
-          <h2 class="text-3xl font-semibold">Latest books</h2>
-          <p class="text-slate mt-2">Free to download, always.</p>
+          <p class="text-sm font-semibold text-green mb-2">Educational publishing</p>
+          <h2 class="text-3xl font-bold">Our books</h2>
         </div>
-        <a href="/books" class="text-sm font-medium text-leaf no-underline hover:underline">View all books →</a>
+        <a href="/books" class="text-sm font-semibold text-green no-underline hover:underline">View all books →</a>
       </div>
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-2 gap-5">
         {books.map((book) => <BookCard {...book.data} />)}
       </div>
     </section>
   )}
 
-  <!-- Latest blog posts -->
+  <!-- Blog -->
   {posts.length > 0 && (
     <section class="max-w-6xl mx-auto px-6 py-20 border-t border-line">
       <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
-        <h2 class="text-3xl font-semibold">From the blog</h2>
-        <a href="/blog" class="text-sm font-medium text-leaf no-underline hover:underline">Read all posts →</a>
+        <h2 class="text-3xl font-bold">Blog & Insights</h2>
+        <a href="/blog" class="text-sm font-semibold text-green no-underline hover:underline">Read all posts →</a>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         {posts.map((post) => <BlogCard slug={post.slug} {...post.data} />)}
@@ -119,21 +174,19 @@ const services = [
     </section>
   )}
 
-  <!-- CTA -->
-  <section class="bg-ink text-white py-20" id="get-involved">
+  <!-- Partner CTA -->
+  <section class="bg-mint py-20">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <h2 class="text-3xl font-semibold">Join the movement.</h2>
-        <p class="text-white/70 mt-3 max-w-md leading-relaxed">
-          Whether you want to teach, learn, or support our work — there's a place for you at EdTech InnoHub.
+        <h2 class="text-3xl font-bold">Let's build practical solutions together.</h2>
+        <p class="text-slate mt-3 max-w-md leading-relaxed">
+          We welcome collaboration with schools, NGOs, foundations, government institutions, corporates,
+          and technology organisations.
         </p>
       </div>
-      <div class="flex flex-wrap gap-3 md:justify-end">
-        <a href="https://forms.gle/NYwMrJQuGzLjgYUXA" class="inline-flex items-center bg-gold text-ink px-5 py-3 rounded-md no-underline font-medium hover:brightness-95 transition">
-          Join as a Team
-        </a>
-        <a href="https://forms.gle/KQE4NgUJhaNP7ojc7" class="inline-flex items-center border border-white/30 text-white px-5 py-3 rounded-md no-underline font-medium hover:bg-white/10 transition">
-          Join as a Learner
+      <div class="md:justify-self-end">
+        <a href="/partner" class="inline-flex items-center bg-forest text-white px-6 py-3.5 rounded-md no-underline font-semibold hover:bg-green transition-colors">
+          Partner With Us
         </a>
       </div>
     </div>

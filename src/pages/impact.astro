@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+---
+
+<BaseLayout title="Impact & Research" description="Real programmes we've run, and our research and innovation work.">
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-6">
+    <p class="text-sm font-semibold text-green mb-4">Projects & Impact</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight max-w-2xl">
+      What we've actually done — not just what we plan to do.
+    </h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      We're early-stage, so this page will grow. Here's a real programme we've delivered.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-line">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <PhotoSlot label="Add real photos from the Ibadan school/community programme" aspect="aspect-[4/3]" />
+      <div>
+        <p class="text-xs font-semibold text-green mb-2">2025 · Ibadan, Nigeria</p>
+        <h2 class="text-2xl font-bold">School & community wellbeing programme</h2>
+
+        <div class="mt-6 space-y-5">
+          <div>
+            <p class="text-xs font-semibold text-slate uppercase tracking-wide">Problem</p>
+            <p class="text-ink mt-1 leading-relaxed">
+              Secondary-school students in Ibadan had limited access to clear, practical education on
+              sexual health, personal wellbeing, and basic menstrual hygiene support.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate uppercase tracking-wide">What we did</p>
+            <p class="text-ink mt-1 leading-relaxed">
+              Ran educational sessions in schools and communities on sexual health, sexual purity and
+              personal wellbeing, paired with basic menstrual hygiene support for girls.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate uppercase tracking-wide">Who we reached</p>
+            <p class="text-ink mt-1 leading-relaxed">
+              Secondary-school students across schools and communities in Ibadan, with a particular focus
+              on girls.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate uppercase tracking-wide">What we learned</p>
+            <p class="text-ink mt-1 leading-relaxed">
+              That EdTech InnoHub isn't only about building products — taking education directly into
+              communities, in person, is core to how we create impact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-mint py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl font-bold mb-3">Research & Innovation</h2>
+      <p class="text-slate leading-relaxed max-w-2xl">
+        We use research and technology to understand educational and social problems, and to develop
+        solutions relevant to the Nigerian and African context — with particular interest in solutions
+        that work in low-resource environments: mobile-first, offline-friendly, low-tech, and localised.
+      </p>
+      <div class="mt-8 text-center py-12 border border-dashed border-line rounded-lg bg-paper">
+        <p class="text-slate">
+          Our first research notes, reports and experiments will be published here as they're ready.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

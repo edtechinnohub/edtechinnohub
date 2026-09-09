@@ -8,13 +8,13 @@ const books = (await getCollection('books')).sort(
 );
 ---
 
-<BaseLayout title="Books" description="Free books from EdTech InnoHub — downloadable and always growing.">
+<BaseLayout title="Books" description="Curriculum-aligned educational books from EdTech InnoHub.">
   <section class="max-w-6xl mx-auto px-6 pt-16 pb-10">
-    <p class="text-sm font-medium text-leaf mb-4">Free library</p>
-    <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">Books</h1>
+    <p class="text-sm font-semibold text-green mb-4">Educational publishing</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight max-w-2xl">Books</h1>
     <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
-      Every book here is free to download. New titles are added directly from our Drive library — no
-      request needed.
+      Curriculum-aligned, illustrated and story-based learning resources. New titles are added directly
+      from our library — synced automatically, no request needed.
     </p>
   </section>
 
@@ -25,7 +25,7 @@ const books = (await getCollection('books')).sort(
       </div>
     ) : (
       <div class="text-center py-16 border border-dashed border-line rounded-lg">
-        <p class="text-slate">No books published yet — the first titles are on their way.</p>
+        <p class="text-slate">Our first titles are on their way.</p>
       </div>
     )}
   </section>

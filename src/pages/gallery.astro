@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+
+const slots = [
+  'Training session',
+  'Community programme',
+  'Educational workshop',
+  'Book / learning materials',
+  'Classroom activity',
+  'Behind the scenes',
+];
+---
+
+<BaseLayout title="Gallery" description="Photos from EdTech InnoHub's training, community programmes and work.">
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-6">
+    <p class="text-sm font-semibold text-green mb-4">Gallery</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight max-w-2xl">Our work, in pictures.</h1>
+    <p class="text-lg text-slate mt-6 max-w-2xl leading-relaxed">
+      Real photos from training sessions, community programmes and the team at work. Drop your photos
+      into <code class="bg-mint px-1.5 py-0.5 rounded text-sm">public/images/gallery/</code> and update
+      the image paths in <code class="bg-mint px-1.5 py-0.5 rounded text-sm">src/pages/gallery.astro</code> —
+      each placeholder below is sized and ready.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-line">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {slots.map((label) => (
+        <PhotoSlot label={`Add a photo: ${label.toLowerCase()}`} aspect="aspect-[4/3]" />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

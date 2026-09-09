@@ -8,8 +8,8 @@ interface Props {
 const { title, category, description, fileUrl } = Astro.props;
 ---
 
-<article class="border border-line rounded-lg p-5 bg-paper hover:border-leaf transition-colors">
-  <p class="text-xs font-medium text-leaf">{category}</p>
+<article class="border border-line rounded-lg p-5 bg-paper hover:border-green transition-colors">
+  <p class="text-xs font-medium text-green">{category}</p>
   <h3 class="text-lg font-semibold leading-snug mt-1">{title}</h3>
   <p class="text-sm text-slate mt-2 line-clamp-2">{description}</p>
   <a

@@ -4,17 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#12203D',      // deep indigo — headings, primary text
-        paper: '#FFFFFF',    // page background
-        mist: '#F3F6F5',     // section background, cool pale sage-grey
-        slate: '#5B6472',    // secondary text
-        gold: '#F2A93B',     // marigold accent — CTAs, highlights
-        leaf: '#2E7D5B',     // deep green accent — links, secondary CTA
-        line: '#DEE3E1',     // hairline borders
+        forest: '#0F3D2E',   // deep forest green — nav, footer, dark sections
+        green: {
+          DEFAULT: '#1E7145', // primary green — CTAs, links, accents
+          light: '#2F9161',
+        },
+        mint: '#EAF4EE',      // pale green section tint
+        ink: '#181B18',       // near-black charcoal — body text/headings
+        slate: '#5B655D',     // secondary text (green-tinted grey)
+        paper: '#FFFFFF',
+        line: '#DCE6DF',
+        sand: '#F6F4EF',      // warm neutral for image-placeholder blocks
       },
       fontFamily: {
-        display: ['"Source Serif 4"', 'Georgia', 'serif'],
-        body: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Manrope"', 'system-ui', 'sans-serif'],
+        body: ['"Manrope"', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         prose: '68ch',

@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://github.com/edtechinnohub/edtechinnohub   # <-- update after you push to GitHub
+  repo: https://github.com/edtechinnohub/edtechinnohub.git/edtechinnohub   # <-- update after you push to GitHub
   branch: main
 
 # When this site is deployed on Netlify, Netlify handles GitHub login for you
@@ -35,6 +35,13 @@ collections:
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "Age group", name: "ageGroup", widget: "string", required: false, hint: "e.g. Primary 1 (ages 5–6)" }
+      - { label: "Curriculum alignment", name: "curriculumAligned", widget: "string", required: false }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["Available", "Coming Soon"]
+        default: "Available"
       - { label: "File URL (Drive share link or upload)", name: "fileUrl", widget: "string" }
       - { label: "Publish date", name: "publishDate", widget: "datetime" }
       - { label: "Body / notes (optional)", name: "body", widget: "markdown", required: false }

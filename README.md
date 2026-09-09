@@ -129,13 +129,29 @@ src/
     resources/   ← one .md file per resource
     blog/        ← one .md file per blog post
     config.ts    ← schema for all three collections
-  components/    ← Header, Footer, BookCard, ResourceCard, BlogCard
+  components/    ← Header, Footer, PhotoSlot, BookCard, ResourceCard, BlogCard
   layouts/       ← BaseLayout.astro
-  pages/         ← one file per route
+  pages/         ← index, about, programs, impact, partner, contact, gallery,
+                   books, resources, blog/, events
 public/
   admin/         ← Decap CMS (config.yml + index.html)
+  images/gallery/← drop real gallery photos here
 scripts/
   sync-drive.mjs ← the Drive auto-sync script
 .github/workflows/
   sync-drive.yml ← runs the sync script on a schedule
 ```
+
+## Photos
+
+Every spot on the site that should have a real photo currently shows a dashed placeholder with a label
+(e.g. "Add a photo: children learning"). To add a real photo:
+
+1. Drop the image file into `public/images/` (create subfolders as you like, e.g. `public/images/gallery/`).
+2. In the relevant `.astro` file, find the `<PhotoSlot label="..." />` and add `src="/images/your-file.jpg"`.
+
+## Contact form
+
+`src/pages/contact.astro` posts to Formspree (a free service, no backend needed). Create a free account
+at [formspree.io](https://formspree.io), make a form, and replace `YOUR-FORM-ID` in that file with your
+real form ID. Until then, the form won't actually send anywhere.

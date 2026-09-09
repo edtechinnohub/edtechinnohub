@@ -13,7 +13,7 @@ const dateStr = publishDate.toLocaleDateString('en-US', { year: 'numeric', month
 
 <article class="group">
   <a href={`/blog/${slug}`} class="no-underline block">
-    <div class="aspect-[16/9] rounded-lg bg-mist overflow-hidden mb-4">
+    <div class="aspect-[16/9] rounded-lg bg-mint overflow-hidden mb-4">
       {coverImage && (
         <img
           src={coverImage}
@@ -24,7 +24,7 @@ const dateStr = publishDate.toLocaleDateString('en-US', { year: 'numeric', month
       )}
     </div>
     <p class="text-xs text-slate">{dateStr} · {author}</p>
-    <h3 class="text-xl font-semibold text-ink mt-1.5 leading-snug group-hover:text-leaf transition-colors">
+    <h3 class="text-xl font-semibold text-ink mt-1.5 leading-snug group-hover:text-green transition-colors">
       {title}
     </h3>
     <p class="text-sm text-slate mt-2 line-clamp-2">{excerpt}</p>

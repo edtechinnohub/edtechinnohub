@@ -2,37 +2,44 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-ink text-white mt-24">
-  <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
-    <div>
-      <p class="font-display text-lg font-semibold mb-2">EdTech InnoHub</p>
-      <p class="text-white/70 text-sm max-w-xs">
-        Bridging the education gap with inclusive, equitable, and quality learning opportunities — aligned with UN SDG 4.
+<footer class="bg-forest text-white mt-24">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
+    <div class="col-span-2">
+      <p class="font-display text-lg font-bold mb-3">EdTech InnoHub</p>
+      <p class="text-white/70 text-sm max-w-xs leading-relaxed">
+        We use education and technology to make learning practical, accessible and useful for real life —
+        for children, young people and educators across Nigeria.
       </p>
     </div>
 
     <div>
       <p class="text-sm font-semibold text-white/90 mb-3">Explore</p>
       <ul class="space-y-2 text-sm text-white/70">
-        <li><a href="/books" class="no-underline hover:text-white">Books</a></li>
-        <li><a href="/resources" class="no-underline hover:text-white">Resources</a></li>
-        <li><a href="/blog" class="no-underline hover:text-white">Blog</a></li>
+        <li><a href="/about" class="no-underline hover:text-white">About</a></li>
+        <li><a href="/programs" class="no-underline hover:text-white">Programs</a></li>
+        <li><a href="/impact" class="no-underline hover:text-white">Impact & Research</a></li>
+        <li><a href="/gallery" class="no-underline hover:text-white">Gallery</a></li>
         <li><a href="/events" class="no-underline hover:text-white">Events</a></li>
       </ul>
     </div>
 
     <div>
-      <p class="text-sm font-semibold text-white/90 mb-3">Get involved</p>
+      <p class="text-sm font-semibold text-white/90 mb-3">Resources</p>
       <ul class="space-y-2 text-sm text-white/70">
-        <li><a href="https://forms.gle/NYwMrJQuGzLjgYUXA" class="no-underline hover:text-white">Join as a Team</a></li>
-        <li><a href="https://forms.gle/KQE4NgUJhaNP7ojc7" class="no-underline hover:text-white">Join as a Learner</a></li>
+        <li><a href="/books" class="no-underline hover:text-white">Books</a></li>
+        <li><a href="/resources" class="no-underline hover:text-white">Free resources</a></li>
+        <li><a href="/blog" class="no-underline hover:text-white">Blog & Insights</a></li>
       </ul>
     </div>
   </div>
 
   <div class="border-t border-white/10">
-    <p class="max-w-6xl mx-auto px-6 py-6 text-xs text-white/50">
-      © {year} EdTech InnoHub. All rights reserved.
-    </p>
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between gap-3">
+      <p class="text-xs text-white/50">© {year} EdTech InnoHub Limited. All rights reserved.</p>
+      <div class="flex gap-5 text-xs">
+        <a href="/partner" class="text-white/70 no-underline hover:text-white">Partner with us</a>
+        <a href="/contact" class="text-white/70 no-underline hover:text-white">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
