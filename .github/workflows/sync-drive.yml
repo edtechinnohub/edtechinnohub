@@ -1,0 +1,34 @@
+name: Sync Drive content
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs automatically every hour
+  workflow_dispatch: # Allows you to click the manual "Run workflow" button any time
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Google Drive Sync Script
+        run: node scripts/sync-drive.mjs
+        env:
+          DRIVE_BOOKS_FOLDER_ID: ${{ secrets.DRIVE_BOOKS_FOLDER_ID }}
+          DRIVE_RESOURCES_FOLDER_ID: ${{ secrets.DRIVE_RESOURCES_FOLDER_ID }}
+
+      - name: Commit and Push Updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automatic update: Synced content from Google Drive"
+          branch: main
