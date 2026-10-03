@@ -5,7 +5,7 @@ description: "An illustrated, story-based Basic Science learning resource for Pr
 ageGroup: "Primary 1 (ages 5–6)"
 curriculumAligned: "Nigeria revised curriculum"
 status: "Available"
-fileUrl: "[https://drive.google.com/drive/folders/1x0NEly7L9D59T5ZIzKYsVWnUZTPjd4mU](https://selar.com/edtech_innohub1)"
+fileUrl: "https://selar.com/edtech_innohub1"
 publishDate: 2026-09-08
 ---
 
