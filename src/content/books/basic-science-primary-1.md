@@ -7,7 +7,5 @@ curriculumAligned: "Nigeria revised curriculum"
 status: "Available"
 fileUrl: "[https://drive.google.com/drive/folders/1x0NEly7L9D59T5ZIzKYsVWnUZTPjd4mU](https://selar.com/edtech_innohub1)"
 publishDate: 2026-09-08
-driveSynced: false
 ---
 
-This book is in development. Once finalised, it will be added here and become available to download for free.
