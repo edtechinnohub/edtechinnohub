@@ -43,34 +43,3 @@ Do not merely manage the person standing in front of you. Lead the person they a
 We build technology, conduct research, and design educational ecosystems that refuse to accept limitations. If you share our passion for seeing potential where others see barriers, we want to collaborate with you. 
 
 **Partner with us today to scale sustainable social impact, or explore our current career and research opportunities to help us build the future of education.**
-
-***
-
-## SEO Meta-Data & Optimisation Strategy
-
-### Meta-Description
-Discover the profound intersection of educational psychology and historical leadership. Learn how the Pygmalion Effect and strengths-based mentoring unlock hidden potential in education, technology, and social impact teams.
-
-### Target Keywords & Search Tags
-* **Primary Keywords:** Pygmalion Effect in leadership, strengths-based education, transformative teaching methods, high-expectations pedagogy.
-* **Secondary Keywords:** Historical leadership case studies, Rosenthal and Jacobson study, social impact leadership, educational technology innovation, human capital development.
-* **Long-Tail Search Terms:** How expectations shape student reality, mentoring uneducated communities for social impact, building confidence through growth mindset management.
-
-***
-
-## Visual Layout & Graphic Options
-
-### Option 1: The Contemporary Research Aesthetic (Highly Recommended)
-* **Visual Style:** Split-screen or double-exposure digital design. One half features a stylized, vibrant neural network graph or data visualization representing growth and research; the other half shows an overhead view of a diverse team collaborating over a modern workspace or tablet. 
-* **Colour Palette:** Deep tech-blues, minimalist whites, and a vibrant gold or orange accent to signify the "spark" of potential.
-* **Concept:** Connects the concepts of technology, data-driven research, and human collaboration.
-
-### Option 2: The Sculpture Meta-Concept
-* **Visual Style:** A high-resolution graphic of a rough, unpolished piece of stone or marble being illuminated by a strong, focused beam of golden light. Within the illuminated section, the smooth, refined contours of a striking sculpture are visible.
-* **Colour Palette:** Moody slate grey, charcoal, and warm amber or metallic gold highlights.
-* **Concept:** A literal, artistic nod to the Pygmalion myth—seeing the masterpiece hidden within the raw material.
-
-### Option 3: The Educational Transformation Silhouette
-* **Visual Style:** A silhouettes-against-light approach. An educator or mentor stands looking out towards a bright horizon, with a group of young professionals or students standing beside them. Subtle geometric digital lines overlay the image to ground it in the tech sector.
-* **Colour Palette:** Emerald green, crisp white, and sunrise yellows to denote a bright future and social progress.
-* **Concept:** Emphasises the human-centric, forward-looking nature of social impact and education.
